@@ -38,9 +38,9 @@ POST {{ base_url }}/api/produtos
 Content-Type: application/json
 
 {
-  "nome": "Baixo",
-  "quantidade": 2,
-  "preco": 3500.00
+  "modelo": "Marea",
+  "ano": 1997,
+  "preco": 4600.00
 }
 
 GET {{ base_url }}/api/produtos
@@ -53,9 +53,9 @@ PUT {{ base_url }}/api/produtos/1
 Content-Type: application/json
 
 {
-  "nome": "Baixo",
-  "quantidade": 5,
-  "preco": 4500.00
+  "modelo": "Marea",
+  "ano": 1997,
+  "preco": 4600.00
 }
 
 ### Remover produto (DELETE)
