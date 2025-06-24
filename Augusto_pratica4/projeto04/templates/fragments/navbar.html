@@ -1,0 +1,20 @@
+<!-- src/main/resources/templates/fragments/navbar.html -->
+<nav th:fragment="navbar" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" class="navbar">
+  <input type="checkbox" id="menu-checkbox" hidden>
+  <label for="menu-checkbox" class="menu-toggle">☰</label>
+
+  <ul class="nav-list">
+    <!-- Listagem visível a qualquer usuário autenticado -->
+    <li sec:authorize="isAuthenticated()">
+      <a th:href="@{/usuarios/listar}" class="nav-link">Lista de Usuários</a>
+    </li>
+    <!-- Cadastro visível a qualquer usuário autenticado -->
+    <li sec:authorize="isAuthenticated()">
+      <a th:href="@{/usuarios/cadastrar}" class="nav-link">Cadastrar Usuário</a>
+    </li>
+    <!-- Detalhes só para ADMIN -->
+    <li sec:authorize="hasRole('ADMIN')">
+      <a th:href="@{/usuarios/1}" class="nav-link">Detalhes (exemplo)</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,32 @@
+<!-- src/main/resources/templates/usuarios/lista.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Usuários</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+  <div th:replace="fragments/navbar :: navbar"></div>
+  <main class="main-content">
+    <h1>Lista de Usuários</h1>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Usuário</th><th>Ações</th></tr>
+      </thead>
+      <tbody>
+        <tr th:each="user : ${lista}">
+          <td th:text="${user.id}"></td>
+          <td th:text="${user.username}"></td>
+          <td>
+            <!-- botão detalhes só aparece para ADMIN -->
+            <a sec:authorize="hasRole('ADMIN')" 
+               th:href="@{/usuarios/{id}(id=${user.id})}" 
+               class="botao">Detalhes</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

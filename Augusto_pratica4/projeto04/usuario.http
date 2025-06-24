@@ -1,0 +1,40 @@
+# Definição de variáveis (ambiente “local” do REST Client)
+@base_url = https://special-funicular-7gvx4jg7p9q2wp5q-8080.app.github.dev
+
+### 1. Criar novo usuário
+POST {{base_url}}/api/usuarios
+Content-Type: application/json
+
+{
+  "username": "ogusto",
+  "password": "ogusto"
+}
+
+###
+
+### 2. Listar todos os usuários
+GET {{base_url}}/api/usuarios
+Accept: application/json
+
+###
+
+### 3. Buscar usuário por ID
+GET {{base_url}}/api/usuarios/1
+Accept: application/json
+
+###
+
+### 4. Atualizar usuário (PUT)
+PUT {{base_url}}/api/usuarios/1
+Content-Type: application/json
+
+{
+  "username": "joaonovo",
+  "password": "novaSenha456"
+}
+
+###
+
+### 5. Remover usuário (DELETE)
+DELETE {{base_url}}/api/usuarios/1
+Accept: */*

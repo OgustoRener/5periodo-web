@@ -1,0 +1,20 @@
+<!-- src/main/resources/templates/usuarios/detalhe.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalhe Usuário</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+  <div th:replace="fragments/navbar :: navbar"></div>
+  <main class="main-content">
+    <h1>Detalhes do Usuário</h1>
+    <p><strong>ID:</strong> <span th:text="${user.id}"/></p>
+    <p><strong>Usuário:</strong> <span th:text="${user.username}"/></p>
+    <form th:action="@{/usuarios/{id}/excluir(id=${user.id})}" method="post">
+      <button type="submit" class="botao">Excluir</button>
+    </form>
+  </main>
+</body>
+</html>

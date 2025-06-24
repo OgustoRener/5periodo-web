@@ -1,0 +1,50 @@
+@base_url = https://special-funicular-7gvx4jg7p9q2wp5q-8080.app.github.dev
+
+### Listar todos os usuários
+GET {{base_url}}/api/users
+Authorization: Basic YWRtaW46YWRtaW4=
+Accept: application/json
+
+###
+
+### Buscar usuário por ID
+GET {{base_url}}/api/users/1
+Authorization: Basic YWRtaW46YWRtaW4=
+Accept: application/json
+
+###
+
+### Criar novo usuário
+POST {{base_url}}/api/users
+Authorization: Basic YWRtaW46YWRtaW4=
+Content-Type: application/json
+
+{
+  "username": "ogusto",
+  "password": "thiago",
+  "roles": [
+    { "name": "ROLE_USER" }
+  ]
+}
+
+###
+
+### Atualizar usuário
+PUT {{base_url}}/api/users/1
+Authorization: Basic YWRtaW46YWRtaW4=
+Content-Type: application/json
+
+{
+  "username": "usuario_atualizado",
+  "password": "novaSenha",
+  "roles": [
+    { "name": "ROLE_ADMIN" }
+  ]
+}
+
+###
+
+### Deletar usuário
+DELETE {{base_url}}/api/users/1
+Authorization: Basic YWRtaW46YWRtaW4=
+Accept: */*
